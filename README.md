@@ -1,4 +1,4 @@
-A Sample Todo App built with ReactJS and JavaScript/ES6. This Todo app is created with React functional Component and React Hooks as a part of the ReactJS learning exercises and diving more into it.
+A Sample Todo App built with ReactJS and JavaScript/ES6. This Todo app is created with React functional components and React Hooks as a part of the ReactJS learning exercises and to dive more into it.
 
 Check the demo hosted on Heroku - https://react---todo-app.herokuapp.com/
 
