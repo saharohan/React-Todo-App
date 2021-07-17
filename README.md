@@ -1,4 +1,4 @@
-Check the demo hosted on heroku : https://simplest-react-todo-app.herokuapp.com/.https://react---todo-app.herokuapp.com/
+Check the demo hosted on heroku : https://react---todo-app.herokuapp.com/
 
 # Getting Started with Create React App
 
