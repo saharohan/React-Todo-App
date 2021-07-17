@@ -34,7 +34,7 @@ function App() {
 
   return (
     <div className="App">
-      <header>TO DO LIST</header>
+      <header>TODO LIST</header>
       <Form
         inputText={inputText}
         setinputText={setinputText}
