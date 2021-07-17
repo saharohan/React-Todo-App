@@ -1,38 +1,364 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: linear-gradient(120deg, #2e8a0a 0%, #c7f337 100%);
+  color: white;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+}
+header {
+  font-size: 4rem;
 }
 
-.App-logo {
-  height: 40vmin;
+header,
+form {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+form input,
+form button {
+  padding: 0.5rem;
+  font-size: 2rem;
+  border: none;
+  background: white;
+}
+form button {
+  color: #44e205fb;
+  background: #f7fffe;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+form button:hover {
+  background: #44e205fb;
+  color: white;
+}
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-list {
+  min-width: 30%;
+  list-style: none;
+}
+
+.todo {
+  margin: 0.5rem;
+  background: white;
+  font-size: 1.5rem;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 1s ease;
+}
+.filter-todo {
+  padding: 1rem;
+}
+.todo li {
+  flex: 1;
+}
+
+.todo-item {
+  padding: 0rem 0.5rem;
+}
+
+.fa-trash,
+.fa-check {
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.fall {
+  transform: translateY(10rem) rotateZ(20deg);
+  opacity: 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
 }
 
-.App-link {
-  color: #61dafb;
+/*CUSTOM SELECTOR */
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background-image: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Custom Select */
+.select {
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+select {
+  color: #ff6f47;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  width: 12rem;
+}
+/* Arrow */
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  background: #44e205fb;
+  cursor: pointer;
+  pointer-events: none;
+}
+/* button {
+  margin: 20px;
+  outline: none;
+} */
+
+.custom-btn {
+  width: 130px;
+  height: 53px;
+  padding: 10px 25px;
+  border: 2px solid #000;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+.custom-btn99 {
+  width: 60px;
+  height: 53px;
+  padding: 10px 25px;
+  border: 2px solid #000;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.btn-6 {
+  background: #44e205fb;
+  color: #fff;
+  line-height: 50px;
+  padding: 0;
+  border: none;
+}
+.btn-6 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.btn-6:before,
+.btn-6:after {
+  position: absolute;
+  content: "";
+  height: 0%;
+  width: 2px;
+  background: #000;
+}
+.btn-6:before {
+  right: 0;
+  top: 0;
+  transition: all 500ms ease;
+}
+.btn-6:after {
+  left: 0;
+  bottom: 0;
+  transition: all 500ms ease;
+}
+.btn-6:hover {
+  color: #000;
+  background: rgb(166, 255, 1); /*rgb(11, 212, 162); */
+  /* #c7f337; */
+}
+.btn-6:hover:before {
+  transition: all 500ms ease;
+  height: 100%;
+}
+.btn-6:hover:after {
+  transition: all 500ms ease;
+  height: 100%;
+}
+.btn-6 span:before,
+.btn-6 span:after {
+  position: absolute;
+  content: "";
+  background: #000;
+}
+.btn-6 span:before {
+  left: 0;
+  top: 0;
+  width: 0%;
+  height: 2px;
+  transition: all 500ms ease;
+}
+.btn-6 span:after {
+  right: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  transition: all 500ms ease;
+}
+.btn-6 span:hover:before {
+  width: 100%;
+}
+.btn-6 span:hover:after {
+  width: 100%;
+}
+.btn-7 {
+  background: rgb(255, 179, 3); /*rgb(11, 212, 162); */
+  color: #fff;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  font-size: 100%;
+}
+.btn-7 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.btn-7:before,
+.btn-7:after {
+  position: absolute;
+  content: "";
+  height: 0%;
+  width: 2px;
+  background: #000;
+}
+.btn-7:before {
+  right: 0;
+  top: 0;
+  transition: all 500ms ease;
+}
+.btn-7:after {
+  left: 0;
+  bottom: 0;
+  transition: all 500ms ease;
+}
+.btn-7:hover {
+  color: #000;
+  background: #dd0101;
+}
+.btn-7:hover:before {
+  transition: all 500ms ease;
+  height: 100%;
+}
+.btn-7:hover:after {
+  transition: all 500ms ease;
+  height: 100%;
+}
+.btn-7 span:before,
+.btn-7 span:after {
+  position: absolute;
+  content: "";
+  background: #000;
+}
+.btn-7 span:before {
+  left: 0;
+  top: 0;
+  width: 0%;
+  height: 2px;
+  transition: all 500ms ease;
+}
+.btn-7 span:after {
+  right: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  transition: all 500ms ease;
+}
+.btn-7 span:hover:before {
+  width: 100%;
+}
+.btn-7 span:hover:after {
+  width: 100%;
+}
+
+.btn-8 {
+  background: #6f97ecfb;
+  color: #fff;
+  line-height: 50px;
+  padding: 0;
+  border: none;
+  font-size: 100%;
+}
+.btn-8 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.btn-8:before,
+.btn-8:after {
+  position: absolute;
+  content: "";
+  height: 0%;
+  width: 2px;
+  background: #000;
+}
+.btn-8:before {
+  right: 0;
+  top: 0;
+  transition: all 500ms ease;
+}
+.btn-8:after {
+  left: 0;
+  bottom: 0;
+  transition: all 500ms ease;
+}
+.btn-8:hover {
+  color: #000;
+  background: #44e205fb;
+}
+.btn-8:hover:before {
+  transition: all 500ms ease;
+  height: 100%;
+}
+.btn-8:hover:after {
+  transition: all 500ms ease;
+  height: 100%;
+}
+.btn-8 span:before,
+.btn-8 span:after {
+  position: absolute;
+  content: "";
+  background: #000;
+}
+.btn-8 span:before {
+  left: 0;
+  top: 0;
+  width: 0%;
+  height: 2px;
+  transition: all 500ms ease;
+}
+.btn-8 span:after {
+  right: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  transition: all 500ms ease;
+}
+.btn-8 span:hover:before {
+  width: 100%;
+}
+.btn-8 span:hover:after {
+  width: 100%;
 }
